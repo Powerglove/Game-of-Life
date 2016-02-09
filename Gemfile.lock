@@ -1,0 +1,12 @@
+GEM
+  specs:
+    byebug (8.2.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  byebug
+
+BUNDLED WITH
+   1.11.2
