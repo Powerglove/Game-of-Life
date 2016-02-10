@@ -36,6 +36,12 @@ class Grid
     end
   end
 
+  def board_as_string
+    10.times do |i|
+      result += i.to_s
+    end
+  end
+
   def neighbours(x,y)
   end
 
