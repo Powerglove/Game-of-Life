@@ -6,14 +6,14 @@ class Grid
 	HEIGHT = 10
 
 	def initialize
-	@cells = Array.new(WIDTH) { Array.new(HEIGHT, false) }
+	@cells = Array.new(WIDTH) { Array.new(HEIGHT, " ") }
 	end
 
 	def create_and_set_position
     35.times do
       x = rand(0..9)
       y = rand(0..9)
-      set_cell(x, y, true)
+      set_cell(x, y, "X")
     end
   end
 
@@ -27,19 +27,22 @@ class Grid
 
   def play_game
     create_and_set_position
-    print_board
+    board_as_string
   end
 
   def print_board
-    @cells.each do |x|
-      puts x.each { |y| y}.join(" | ")
-    end
+    puts board_as_string
   end
 
   def board_as_string
-    10.times do |i|
-      result += i.to_s
+    board = ""
+    @cells.each do |x|
+      x.each do |y|
+        board << y
+      end
+      board << "\n"
     end
+    board
   end
 
   def neighbours(x,y)
@@ -50,5 +53,7 @@ end
 
 life = Grid.new
 life.play_game
+life.print_board
+
 
 
